@@ -4,6 +4,7 @@
   "description": "A simple NodeJS application to read Solis PV inverter data using HTTP interface",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,8 @@
   "dependencies": {
     "axios": "^0.21.2",
     "jsdom": "^16.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^11.0.0"
   }
 }

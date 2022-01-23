@@ -1,4 +1,5 @@
 # Solis inverter JSON API
+
 A simple NodeJS application to read Solis PV inverter data using HTTP interface, extract and serve data as JSON formatted as follows:
 
 ```json
@@ -37,7 +38,17 @@ A simple NodeJS application to read Solis PV inverter data using HTTP interface,
   }
 }
 ```
- 
- Usage:
- 
-`SOLIS_ADDRESS=<INVERTER_IP_ADDRESS> SOLIS_USERNAME=<INVERTER_WEB_USERNAME> SOLIS_PASSWORD=<INVERTER_WEB_PASSWORD> INTERVAL=<REFRESH_INTERVAL (milliseconds, optional, default = 30000)> node index.js`
+
+## Usage:
+
+1. Copy `.env` example file and replace with your values
+
+   ```
+   cp .env.example .env
+   ```
+
+2. Start application
+
+   ```
+   npm start
+   ```

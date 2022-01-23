@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const SolisInverterClient = require('./lib/solis_inverter_client.js')
 const { name } = require('./package.json')
 
