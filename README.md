@@ -39,7 +39,19 @@ A simple NodeJS application to read Solis PV inverter data using HTTP interface,
 }
 ```
 
-## Usage:
+## Run with Docker
+
+1. Copy `.env` example file and replace with your values
+
+   ```
+   cp .env.example .env
+   ```
+2. Run docker command
+   ```
+   docker run -d --env-file=.env -p 8000:8000 ghcr.io/danielemery/solis-inverter:v1.0.2-docker.4
+   ```
+
+## Local Development
 
 1. Copy `.env` example file and replace with your values
 
