@@ -46,8 +46,8 @@ const server = require('http').createServer((req, res) => {
     if(url.pathname === '/metrics') {
       res.writeHead(200, { 'Last-Modified': lastDate.toString() })
       res.end(`solis_inverter_power_watts ${lastResponse.power}
-solid_inverter_yield_today_kwh ${lastResponse.energy.today}
-solid_inverter_yield_total_kwh ${lastResponse.energy.total}\
+solis_inverter_yield_today_kwh ${lastResponse.energy.today}
+solis_inverter_yield_total_kwh ${lastResponse.energy.total}\
 `);
     } else {
       res.writeHead(200, { 'Last-Modified': lastDate.toString() })
