@@ -19,5 +19,6 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ghcr.io/danielemery/solis-inverter:${{ env.TAG }}
