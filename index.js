@@ -41,9 +41,18 @@ let lastDate = new Date()
 const log = what => console.log([(new Date()).toISOString(), name, what].join(' '))
 
 const server = require('http').createServer((req, res) => {
+  const url = new URL(req.url, `http://${req.headers.host}`);
   if (lastResponse) {
-    res.writeHead(200, { 'Last-Modified': lastDate.toString() })
-    res.end(JSON.stringify(lastResponse))
+    if(url.pathname === '/metrics') {
+      res.writeHead(200, { 'Last-Modified': lastDate.toString() })
+      res.end(`solis_inverter_power_watts ${lastResponse.power}
+solid_inverter_yield_today_kwh ${lastResponse.energy.today}
+solid_inverter_yield_total_kwh ${lastResponse.energy.total}\
+`);
+    } else {
+      res.writeHead(200, { 'Last-Modified': lastDate.toString() })
+      res.end(JSON.stringify(lastResponse))
+    }
   } else {
     res.writeHead(500)
     res.end('No data')
